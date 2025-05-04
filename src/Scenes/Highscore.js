@@ -31,7 +31,7 @@ class HighScoreScene extends Phaser.Scene {
     }
 
     update() {
-        if (Phaser.Input.Keyboard.JustDown(this.spaceKey)) {
+        if (Phaser.Input.Keyboard.JustDown(this.enterKey)) {
             this.scene.start("PixelScene");
         }
     }

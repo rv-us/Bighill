@@ -8,9 +8,51 @@
     <script src="./src/Scenes/Monster.js"></script>
     <script src="./src/Scenes/Highscore.js"></script>
     <script src="./src/main.js"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 20px;
+            gap: 40px;
+        }
+
+        #phaser-game {
+            border: 2px solid black;
+        }
+
+        #controls {
+            max-width: 220px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        #controls h2 {
+            margin-top: 0;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            #controls {
+                max-width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body>
     <div id="phaser-game"></div>
-    <span id="description"></span>
+    <div id="controls">
+        <h2>Controls</h2>
+        <p><strong>A / D</strong> – Move left / right</p>
+        <p><strong>SPACE</strong> – Shoot (tap repeatedly)</p>
+        <p><strong>ENTER</strong> – Restart on Game Over</p>
+    </div>
 </body>
 </html>
