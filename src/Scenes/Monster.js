@@ -227,8 +227,8 @@ class Pixel extends Phaser.Scene {
         this.load.image("skimap", "assets/kenney_tiny-ski/Tilemap/tilemap_packed.png");
         this.load.tilemapTiledJSON("skimap", "assets/skimap.json");
         this.load.audio('bgm', 'assets/background-music-upbeat-energetic-333016.mp3');
-        this.load.audio('md', 'assets/assets/male-death-sound-128357.mp3');
-        this.load.audio('ad', 'assets/assets/animal-dying-sound-281658.mp3');
+        this.load.audio('md', 'assets/male-death-sound-128357.mp3');
+        this.load.audio('ad', 'assets/animal-dying-sound-281658.mp3');
 
     }
     resetGame() {
@@ -298,7 +298,7 @@ class Pixel extends Phaser.Scene {
                 if (Phaser.Geom.Intersects.RectangleToRectangle(bullet.getBounds(), enemy.getBounds())) {
                     bullet.destroy();
                     enemy.health--;
-                    if ((enemy instanceof EnemyA && enemy.health <= 1) || (enemy instanceof EnemyB && enemy.health <= 2)) {
+                    if ((enemy instanceof EnemyA && enemy.health <= 2) || (enemy instanceof EnemyB && enemy.health <= 3)) {
                         enemy.follow = true;
                     }
                     if (enemy.health <= 0) {
@@ -320,11 +320,27 @@ class Pixel extends Phaser.Scene {
                 this.updateLivesUI();
         
                 if (this.lives <= 0) {
+                    this.music.stop();
                     this.registry.set("lastScore", this.score);
                     this.scene.start("HighScoreScene", { score: this.score, wave: this.currentWave });
                 }
             }
         });
+        this.enemyGroup.getChildren().forEach(enemy => {
+            if (enemy.follow && Phaser.Geom.Intersects.RectangleToRectangle(enemy.getBounds(), this.player.getBounds())) {
+                this.lives -= 1;
+                this.updateLivesUI();
+        
+                if (this.lives <= 0) {
+                    this.music.stop();
+                    this.registry.set("lastScore", this.score);
+                    this.scene.start("HighScoreScene", { score: this.score, wave: this.currentWave });
+                }
+        
+                enemy.destroy(); 
+            }
+        });
+        
         if (!this.waveInProgress && this.enemyGroup.getLength() === 0) {
             this.waveInProgress = true;
             this.time.delayedCall(1000, () => this.spawnWave());

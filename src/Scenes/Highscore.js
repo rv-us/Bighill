@@ -24,9 +24,10 @@ class HighScoreScene extends Phaser.Scene {
         this.add.text(400, 350, `Waves Survived: ${this.wave}`, { fontSize: '28px', fill: '#ffffff' }).setOrigin(0.5);
         this.add.text(400, 400, `High Score: ${this.highscore}`, { fontSize: '28px', fill: '#ffff66' }).setOrigin(0.5);
         this.add.text(400, 450, `Highest Wave: ${this.highwave}`, { fontSize: '28px', fill: '#66ffcc' }).setOrigin(0.5);
-        this.add.text(400, 540, `Press SPACE to Restart`, { fontSize: '24px', fill: '#bbbbbb' }).setOrigin(0.5);
+        this.add.text(400, 540, `Press Enter to Restart`, { fontSize: '24px', fill: '#bbbbbb' }).setOrigin(0.5);
 
-        this.spaceKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
+        this.enterKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ENTER);
+
     }
 
     update() {
