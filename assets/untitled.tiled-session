@@ -1,0 +1,39 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "",
+    "expandedProjectPaths": [
+        "kenney_tiny-ski/Tiled",
+        "kenney_tiny-ski",
+        "."
+    ],
+    "file.lastUsedOpenFilter": "All Files (*)",
+    "fileStates": {
+        "": {
+            "scaleInDock": 2
+        },
+        "#tilemap": {
+            "scaleInDock": 1
+        }
+    },
+    "last.exportedFilePath": "C:/Users/rachi/Projects/Cmpm 120/Big Hill/assets",
+    "last.imagePath": "C:/Users/rachi/Projects/Cmpm 120/Big Hill/assets/kenney_tiny-ski/Tilemap",
+    "map.height": 50,
+    "map.lastUsedExportFilter": "JSON map files (*.tmj *.json)",
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 16,
+    "map.tileWidth": 16,
+    "map.width": 50,
+    "openFiles": [
+    ],
+    "project": "untitled.tiled-project",
+    "recentFiles": [
+    ],
+    "tileset.embedInMap": true,
+    "tileset.tileSize": {
+        "height": 16,
+        "width": 16
+    }
+}
